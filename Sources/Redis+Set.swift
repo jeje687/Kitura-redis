@@ -23,7 +23,7 @@ extension Redis {
     //  MARK: Set API functions
     //
     
-    /// Add one or more members to a set
+    /// Add one or more members to a set as part of a transaction
     ///
     /// - Parameter key: The key.
     /// - Parameter members: The values to be added to the set.
@@ -34,7 +34,7 @@ extension Redis {
         saddArrayOfMembers(key, members: members, callback: callback)
     }
 
-    /// Add one or more members to a set
+    /// Add one or more members to a set as part of a transaction
     ///
     /// - Parameter key: The key.
     /// - Parameter members: An array of values to be added to the set.
@@ -51,7 +51,7 @@ extension Redis {
         }
     }
 
-    /// Add one or more members to a set
+    /// Add one or more members to a set as part of a transaction
     ///
     /// - Parameter key: The key.
     /// - Parameter members: The `RedisString` values to be added to the set.
@@ -62,7 +62,7 @@ extension Redis {
         saddArrayOfMembers(key, members: members, callback: callback)
     }
 
-    /// Add one or more members to a set
+    /// Add one or more members to a set as part of a transaction
     ///
     /// - Parameter key: The key.
     /// - Parameter members: An array of `RedisString` values to be added to the set.
