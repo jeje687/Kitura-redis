@@ -19,6 +19,16 @@ import Foundation
 /// Extend Redis by adding the Basic operations
 extension Redis {
     
+    
+    //Fonction de publication
+    public func pub(_ channel: String, value: String, callback: (Int?, NSError?) -> Void) {
+        
+        var command = ["PUBLISH", channel, value]
+        issueCommandInArray(command) {(response: RedisResponse) in
+            self.redisIntegerResponseHandler(response, callback: callback)
+        }
+    }
+    
     //
     //  MARK: Basic API functions
     //
